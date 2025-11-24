@@ -1,0 +1,62 @@
+---
+import Container from "./Container.astro";
+import Frame from "./Frame.astro";
+import { cn } from "@lib/utils";
+import { button } from "@tailus/themer-button";
+---
+
+<div class="relative py-24 scroll-mt-24" id="contatti">
+  <!-- Background Image with Overlay -->
+  <div class="absolute inset-0 z-0">
+    <img
+      src="/cta_bg.png"
+      alt="Gym Equipment"
+      class="w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gray-950/80"></div>
+  </div>
+
+  <Container class="relative z-10">
+    <div class="max-w-3xl mx-auto text-center space-y-8">
+      <h2 class="text-4xl sm:text-5xl font-bold text-white tracking-tight">
+        Non aspettare il "momento giusto". <br />
+        <span class="text-primary-500">Crealo.</span>
+      </h2>
+
+      <p class="text-xl text-gray-300 leading-relaxed">
+        I posti per il coaching 1:1 sono limitati. Candidati ora per trasformare
+        il tuo fisico e smettere di perdere tempo con metodi che non funzionano.
+      </p>
+
+      <div class="flex flex-col sm:flex-row justify-center gap-4 pt-4">
+        <Frame>
+          <a
+            href="https://wa.me/393495525181"
+            class={cn(
+              button.primary.lg,
+              "w-full sm:w-auto relative z-[1] shadow-lg shadow-primary-500/20",
+            )}
+          >
+            Richiedi Consulenza Gratuita
+          </a>
+        </Frame>
+
+        <Frame>
+          <a
+            href="mailto:visualgabri@gmail.com"
+            class={cn(
+              button.secondary.lg,
+              "w-full sm:w-auto relative z-[1] border-white/20 text-white hover:bg-white/10",
+            )}
+          >
+            Scrivimi una Email
+          </a>
+        </Frame>
+      </div>
+
+      <p class="text-sm text-gray-500 pt-4">
+        *Rispondo personalmente a tutte le richieste entro 24 ore.
+      </p>
+    </div>
+  </Container>
+</div>

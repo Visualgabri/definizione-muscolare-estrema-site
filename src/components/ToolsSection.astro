@@ -1,0 +1,359 @@
+---
+import Container from "./Container.astro";
+---
+
+<section
+    id="tools"
+    class="py-12 sm:py-16 bg-white dark:bg-gray-950 scroll-mt-24"
+>
+    <Container>
+        <div class="mb-8 text-center max-w-2xl mx-auto">
+            <h2
+                class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-4"
+            >
+                Strumenti Professionali Gratuiti
+            </h2>
+            <p class="text-lg text-gray-600 dark:text-gray-400">
+                Utilizza questi calcolatori scientifici per monitorare i tuoi
+                parametri e pianificare i tuoi obiettivi.
+            </p>
+        </div>
+
+        <div class="grid gap-6 lg:grid-cols-2">
+            <!-- BMI Calculator -->
+            <div
+                class="bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 border border-gray-100 dark:border-gray-800 shadow-sm"
+            >
+                <div class="flex items-center gap-3 mb-6">
+                    <div
+                        class="p-2 bg-primary-100 dark:bg-primary-900/30 rounded-lg text-primary-600 dark:text-primary-400"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="size-6"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0 0 12 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 0 1-2.031.352 5.988 5.988 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971Zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 0 1-2.031.352 5.989 5.989 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971Z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <h3
+                        class="text-xl font-semibold text-gray-900 dark:text-white"
+                    >
+                        Calcolatore BMI
+                    </h3>
+                </div>
+
+                <form id="bmi-form" class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label
+                                for="bmi-weight"
+                                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                                >Peso (kg)</label
+                            >
+                            <input
+                                type="number"
+                                id="bmi-weight"
+                                placeholder="Es. 75"
+                                class="w-full rounded-lg border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-primary-500 focus:border-primary-500"
+                                required
+                                min="30"
+                                max="300"
+                            />
+                        </div>
+                        <div>
+                            <label
+                                for="bmi-height"
+                                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                                >Altezza (cm)</label
+                            >
+                            <input
+                                type="number"
+                                id="bmi-height"
+                                placeholder="Es. 180"
+                                class="w-full rounded-lg border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-primary-500 focus:border-primary-500"
+                                required
+                                min="100"
+                                max="250"
+                            />
+                        </div>
+                    </div>
+                    <button
+                        type="submit"
+                        class="w-full py-2.5 px-4 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors"
+                    >
+                        Calcola BMI
+                    </button>
+                </form>
+
+                <div
+                    id="bmi-result"
+                    class="mt-6 hidden p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700"
+                >
+                    <p class="text-sm text-gray-500 dark:text-gray-400">
+                        Il tuo BMI è:
+                    </p>
+                    <div class="flex items-baseline gap-2 mt-1">
+                        <span
+                            id="bmi-value"
+                            class="text-3xl font-bold text-primary-600 dark:text-primary-400"
+                            >--</span
+                        >
+                        <span
+                            id="bmi-category"
+                            class="text-lg font-medium text-gray-700 dark:text-gray-300"
+                            >--</span
+                        >
+                    </div>
+                    <p class="text-xs text-gray-400 mt-2">
+                        *Il BMI è un indicatore generale e non tiene conto della
+                        massa muscolare.
+                    </p>
+                </div>
+            </div>
+
+            <!-- TDEE Calculator -->
+            <div
+                class="bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 border border-gray-100 dark:border-gray-800 shadow-sm"
+            >
+                <div class="flex items-center gap-3 mb-6">
+                    <div
+                        class="p-2 bg-secondary-100 dark:bg-secondary-900/30 rounded-lg text-secondary-600 dark:text-secondary-400"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="size-6"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <h3
+                        class="text-xl font-semibold text-gray-900 dark:text-white"
+                    >
+                        Calcolatore TDEE (Calorie)
+                    </h3>
+                </div>
+
+                <form id="tdee-form" class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label
+                                for="tdee-gender"
+                                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                                >Sesso</label
+                            >
+                            <select
+                                id="tdee-gender"
+                                class="w-full rounded-lg border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-secondary-500 focus:border-secondary-500"
+                            >
+                                <option value="male">Uomo</option>
+                                <option value="female">Donna</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label
+                                for="tdee-age"
+                                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                                >Età</label
+                            >
+                            <input
+                                type="number"
+                                id="tdee-age"
+                                placeholder="Es. 30"
+                                class="w-full rounded-lg border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-secondary-500 focus:border-secondary-500"
+                                required
+                                min="15"
+                                max="100"
+                            />
+                        </div>
+                        <div>
+                            <label
+                                for="tdee-weight"
+                                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                                >Peso (kg)</label
+                            >
+                            <input
+                                type="number"
+                                id="tdee-weight"
+                                placeholder="Es. 75"
+                                class="w-full rounded-lg border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-secondary-500 focus:border-secondary-500"
+                                required
+                                min="30"
+                                max="300"
+                            />
+                        </div>
+                        <div>
+                            <label
+                                for="tdee-height"
+                                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                                >Altezza (cm)</label
+                            >
+                            <input
+                                type="number"
+                                id="tdee-height"
+                                placeholder="Es. 180"
+                                class="w-full rounded-lg border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-secondary-500 focus:border-secondary-500"
+                                required
+                                min="100"
+                                max="250"
+                            />
+                        </div>
+                    </div>
+                    <div>
+                        <label
+                            for="tdee-activity"
+                            class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                            >Livello Attività</label
+                        >
+                        <select
+                            id="tdee-activity"
+                            class="w-full rounded-lg border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-secondary-500 focus:border-secondary-500"
+                        >
+                            <option value="1.2"
+                                >Sedentario (poco o nulla)</option
+                            >
+                            <option value="1.375"
+                                >Leggermente attivo (1-3 gg/sett)</option
+                            >
+                            <option value="1.55"
+                                >Moderatamente attivo (3-5 gg/sett)</option
+                            >
+                            <option value="1.725"
+                                >Molto attivo (6-7 gg/sett)</option
+                            >
+                            <option value="1.9"
+                                >Estremamente attivo (lavoro fisico)</option
+                            >
+                        </select>
+                    </div>
+                    <button
+                        type="submit"
+                        class="w-full py-2.5 px-4 bg-secondary-600 hover:bg-secondary-700 text-white font-medium rounded-lg transition-colors"
+                    >
+                        Calcola Fabbisogno
+                    </button>
+                </form>
+
+                <div
+                    id="tdee-result"
+                    class="mt-6 hidden p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700"
+                >
+                    <p class="text-sm text-gray-500 dark:text-gray-400">
+                        Il tuo fabbisogno giornaliero stimato:
+                    </p>
+                    <div class="flex items-baseline gap-2 mt-1">
+                        <span
+                            id="tdee-value"
+                            class="text-3xl font-bold text-secondary-600 dark:text-secondary-400"
+                            >--</span
+                        >
+                        <span
+                            class="text-lg font-medium text-gray-700 dark:text-gray-300"
+                            >kcal/giorno</span
+                        >
+                    </div>
+                    <p class="text-xs text-gray-400 mt-2">
+                        *Stima basata sulla formula Mifflin-St Jeor.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </Container>
+</section>
+
+<script>
+    // BMI Calculator
+    const bmiForm = document.getElementById("bmi-form");
+    const bmiResult = document.getElementById("bmi-result");
+    const bmiValueEl = document.getElementById("bmi-value");
+    const bmiCategoryEl = document.getElementById("bmi-category");
+
+    if (bmiForm) {
+        bmiForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const weight = parseFloat(
+                (document.getElementById("bmi-weight") as HTMLInputElement)
+                    .value,
+            );
+            const heightCm = parseFloat(
+                (document.getElementById("bmi-height") as HTMLInputElement)
+                    .value,
+            );
+
+            if (weight > 0 && heightCm > 0) {
+                const heightM = heightCm / 100;
+                const bmi = weight / (heightM * heightM);
+                const bmiFormatted = bmi.toFixed(1);
+
+                let category = "";
+                if (bmi < 18.5) category = "Sottopeso";
+                else if (bmi < 25) category = "Normopeso";
+                else if (bmi < 30) category = "Sovrappeso";
+                else category = "Obeso";
+
+                if (bmiValueEl) bmiValueEl.textContent = bmiFormatted;
+                if (bmiCategoryEl) bmiCategoryEl.textContent = category;
+                if (bmiResult) bmiResult.classList.remove("hidden");
+            }
+        });
+    }
+
+    // TDEE Calculator
+    const tdeeForm = document.getElementById("tdee-form");
+    const tdeeResult = document.getElementById("tdee-result");
+    const tdeeValueEl = document.getElementById("tdee-value");
+
+    if (tdeeForm) {
+        tdeeForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const gender = (
+                document.getElementById("tdee-gender") as HTMLSelectElement
+            ).value;
+            const age = parseFloat(
+                (document.getElementById("tdee-age") as HTMLInputElement).value,
+            );
+            const weight = parseFloat(
+                (document.getElementById("tdee-weight") as HTMLInputElement)
+                    .value,
+            );
+            const height = parseFloat(
+                (document.getElementById("tdee-height") as HTMLInputElement)
+                    .value,
+            );
+            const activity = parseFloat(
+                (document.getElementById("tdee-activity") as HTMLSelectElement)
+                    .value,
+            );
+
+            if (age > 0 && weight > 0 && height > 0) {
+                // Mifflin-St Jeor Equation
+                let bmr = 10 * weight + 6.25 * height - 5 * age;
+                if (gender === "male") {
+                    bmr += 5;
+                } else {
+                    bmr -= 161;
+                }
+
+                const tdee = Math.round(bmr * activity);
+
+                if (tdeeValueEl) tdeeValueEl.textContent = tdee.toString();
+                if (tdeeResult) tdeeResult.classList.remove("hidden");
+            }
+        });
+    }
+</script>

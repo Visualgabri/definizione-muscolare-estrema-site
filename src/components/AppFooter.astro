@@ -1,0 +1,68 @@
+---
+import BrandIcon from "./BrandIcon.astro";
+import Container from "./Container.astro";
+
+type Link = {
+  title: string;
+  url: string;
+};
+
+const internalLinks = [
+  { title: "Home", url: "#" },
+  { title: "About", url: "#" },
+  { title: "Guide", url: "#" },
+  { title: "Blocks", url: "#" },
+  { title: "Contact", url: "#" },
+  { title: "Terms of Use", url: "#" },
+];
+
+const externalLinks = [
+  { title: "Github", url: "#" },
+  { title: "Twitter", url: "#" },
+  { title: "YouTube", url: "#" },
+  { title: "Facebook", url: "#" },
+  { title: "Medium", url: "#" },
+  { title: "Pintrest", url: "#" },
+  { title: "Patreon", url: "#" },
+  { title: "Instagram", url: "#" },
+];
+---
+
+<footer id="contatti" class="border-t border-gray-800 mt-16">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-6">
+    <div>
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+        Contatta Definizione Muscolare Estrema
+      </h2>
+      <p class="mt-2 text-gray-600 dark:text-gray-300">
+        Raccontami il tuo punto di partenza e il tuo obiettivo. Ti rispondo con la soluzione piu adatta
+        al livello in cui ti trovi adesso.
+      </p>
+    </div>
+
+    <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+      <li>
+        Email,
+        <a href="mailto:info@definizionemuscolareestrema.com" class="underline">
+          info@definizionemuscolareestrema.com
+        </a>
+      </li>
+      <li>
+        WhatsApp,
+        <a href="https://wa.me/39TUONUMERO" class="underline">
+          scrivimi su WhatsApp
+        </a>
+      </li>
+      <li>
+        Instagram,
+        <a href="https://instagram.com/TUOUSERNAME" class="underline">
+          seguimi su Instagram
+        </a>
+      </li>
+    </ul>
+
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      © {new Date().getFullYear()} Definizione Muscolare Estrema, tutti i diritti riservati.
+    </p>
+  </div>
+</footer>

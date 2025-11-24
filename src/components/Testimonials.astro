@@ -1,0 +1,269 @@
+---
+import Container from "./Container.astro"
+import { softVariant as card } from "@tailus/themer-card";
+import { cn } from "@lib/utils";
+---
+
+<section class="text-gray-600 dark:text-gray-300 scroll-mt-24" id="risultati">
+  <Container>
+    <div class="text-center">
+      <h2 class="text-3xl text-gray-950 dark:text-white font-semibold md:text-4xl">
+        Risultati dei clienti
+      </h2>
+      <p class="mt-4 text-gray-600 dark:text-gray-400">
+        Alcune trasformazioni ottenute con il metodo Definizione Muscolare Estrema.
+      </p>
+    </div>
+
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      <div class="space-y-3">
+        <div class={cn(card)}>
+          <div class="flex gap-3">
+            <span class="relative block rounded-[--avatar-border-radius] text-lg size-10">
+              <img
+                class="h-full w-full rounded-[--avatar-border-radius] object-cover"
+                alt="Claudio"
+                src="https://randomuser.me/api/portraits/men/1.jpg"
+                loading="lazy"
+                width="120"
+                height="120"
+              />
+            </span>
+            <div class="w-[calc(100%-3.25rem)]">
+              <h3 class="font-medium text-gray-950 dark:text-white">Claudio</h3>
+              <span class="block text-sm tracking-wide text-gray-600 dark:text-gray-400">
+                Percorso definizione, meno dodici chili
+              </span>
+              <blockquote class="mt-3">
+                <p class="text-gray-600 dark:text-gray-400">
+                  In quattordici settimane ho perso peso senza perdere forza.
+                  Addome visibile, schede chiare e progressioni sempre sotto controllo.
+                </p>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+
+        <div class={cn(card)}>
+          <div class="flex gap-3">
+            <span class="relative block rounded-[--avatar-border-radius] text-lg size-10">
+              <img
+                class="h-full w-full rounded-[--avatar-border-radius] object-cover"
+                alt="Sara"
+                src="https://randomuser.me/api/portraits/women/65.jpg"
+                loading="lazy"
+                width="120"
+                height="120"
+              />
+            </span>
+            <div class="w-[calc(100%-3.25rem)]">
+              <h3 class="font-medium text-gray-950 dark:text-white">Sara</h3>
+              <span class="block text-sm tracking-wide text-gray-600 dark:text-gray-400">
+                Body recomp, glutei e spalle
+              </span>
+              <blockquote class="mt-3">
+                <p class="text-gray-600 dark:text-gray-400">
+                  Nessuna dieta estrema, ma lavoro costante e allenamenti mirati.
+                  Glutei e parte alta molto più pieni e definiti.
+                </p>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+
+        <div class={cn(card)}>
+          <div class="flex gap-3">
+            <span class="relative block rounded-[--avatar-border-radius] text-lg size-10">
+              <img
+                class="h-full w-full rounded-[--avatar-border-radius] object-cover"
+                alt="Luca"
+                src="https://randomuser.me/api/portraits/men/32.jpg"
+                loading="lazy"
+                width="120"
+                height="120"
+              />
+            </span>
+            <div class="w-[calc(100%-3.25rem)]">
+              <h3 class="font-medium text-gray-950 dark:text-white">Luca</h3>
+              <span class="block text-sm tracking-wide text-gray-600 dark:text-gray-400">
+                Ricomposizione attiva
+              </span>
+              <blockquote class="mt-3">
+                <p class="text-gray-600 dark:text-gray-400">
+                  Peso quasi uguale, ma fisico completamente diverso.
+                  Più massa nei punti giusti e grasso in meno grazie a progressioni strutturate.
+                </p>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-3">
+        <div class={cn(card)}>
+          <div class="flex gap-3">
+            <span class="relative block rounded-[--avatar-border-radius] text-lg size-10">
+              <img
+                class="h-full w-full rounded-[--avatar-border-radius] object-cover"
+                alt="Marco"
+                src="https://randomuser.me/api/portraits/men/45.jpg"
+                loading="lazy"
+                width="120"
+                height="120"
+              />
+            </span>
+            <div class="w-[calc(100%-3.25rem)]">
+              <h3 class="font-medium text-gray-950 dark:text-white">Marco</h3>
+              <span class="block text-sm tracking-wide text-gray-600 dark:text-gray-400">
+                Preparazione gara natural
+              </span>
+              <blockquote class="mt-3">
+                <p class="text-gray-600 dark:text-gray-400">
+                  Dalla costruzione alla definizione estrema, con ogni fase programmata.
+                  In palco mi sono sentito al mio meglio di sempre.
+                </p>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+
+        <div class={cn(card)}>
+          <div class="flex gap-3">
+            <span class="relative block rounded-[--avatar-border-radius] text-lg size-10">
+              <img
+                class="h-full w-full rounded-[--avatar-border-radius] object-cover"
+                alt="Elena"
+                src="https://randomuser.me/api/portraits/women/44.jpg"
+                loading="lazy"
+                width="120"
+                height="120"
+              />
+            </span>
+            <div class="w-[calc(100%-3.25rem)]">
+              <h3 class="font-medium text-gray-950 dark:text-white">Elena</h3>
+              <span class="block text-sm tracking-wide text-gray-600 dark:text-gray-400">
+                Tonificazione e definizione
+              </span>
+              <blockquote class="mt-3">
+                <p class="text-gray-600 dark:text-gray-400">
+                  Allenamenti adattati ai miei orari e recupero.
+                  Ho finalmente capito come lavorare bene senza distruggermi.
+                </p>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+
+        <div class={cn(card)}>
+          <div class="flex gap-3">
+            <span class="relative block rounded-[--avatar-border-radius] text-lg size-10">
+              <img
+                class="h-full w-full rounded-[--avatar-border-radius] object-cover"
+                alt="Davide"
+                src="https://randomuser.me/api/portraits/men/12.jpg"
+                loading="lazy"
+                width="120"
+                height="120"
+              />
+            </span>
+            <div class="w-[calc(100%-3.25rem)]">
+              <h3 class="font-medium text-gray-950 dark:text-white">Davide</h3>
+              <span class="block text-sm tracking-wide text-gray-600 dark:text-gray-400">
+                Forza e definizione
+              </span>
+              <blockquote class="mt-3">
+                <p class="text-gray-600 dark:text-gray-400">
+                  Sono diventato più forte sui fondamentali mentre tiravo giù grasso.
+                  Programmazione molto piu logica di tutto quello che avevo fatto prima.
+                </p>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-3">
+        <div class={cn(card)}>
+          <div class="flex gap-3">
+            <span class="relative block rounded-[--avatar-border-radius] text-lg size-10">
+              <img
+                class="h-full w-full rounded-[--avatar-border-radius] object-cover"
+                alt="Giulia"
+                src="https://randomuser.me/api/portraits/women/68.jpg"
+                loading="lazy"
+                width="120"
+                height="120"
+              />
+            </span>
+            <div class="w-[calc(100%-3.25rem)]">
+              <h3 class="font-medium text-gray-950 dark:text-white">Giulia</h3>
+              <span class="block text-sm tracking-wide text-gray-600 dark:text-gray-400">
+                Percorso ricomposizione
+              </span>
+              <blockquote class="mt-3">
+                <p class="text-gray-600 dark:text-gray-400">
+                  Prima ero sempre in deficit senza risultati. Ora mangio di piu,
+                  mi alleno meglio e il fisico e cambiato davvero.
+                </p>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+
+        <div class={cn(card)}>
+          <div class="flex gap-3">
+            <span class="relative block rounded-[--avatar-border-radius] text-lg size-10">
+              <img
+                class="h-full w-full rounded-[--avatar-border-radius] object-cover"
+                alt="Andrea"
+                src="https://randomuser.me/api/portraits/men/21.jpg"
+                loading="lazy"
+                width="120"
+                height="120"
+              />
+            </span>
+            <div class="w-[calc(100%-3.25rem)]">
+              <h3 class="font-medium text-gray-950 dark:text-white">Andrea</h3>
+              <span class="block text-sm tracking-wide text-gray-600 dark:text-gray-400">
+                Ritorno in forma dopo stop
+              </span>
+              <blockquote class="mt-3">
+                <p class="text-gray-600 dark:text-gray-400">
+                  Venivo da un periodo fermo e con dolori. Abbiamo ricostruito tecnica,
+                  forza e condizione senza strafare, ma passo dopo passo.
+                </p>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+
+        <div class={cn(card)}>
+          <div class="flex gap-3">
+            <span class="relative block rounded-[--avatar-border-radius] text-lg size-10">
+              <img
+                class="h-full w-full rounded-[--avatar-border-radius] object-cover"
+                alt="Cliente anonimo"
+                src="https://randomuser.me/api/portraits/men/55.jpg"
+                loading="lazy"
+                width="120"
+                height="120"
+              />
+            </span>
+            <div class="w-[calc(100%-3.25rem)]">
+              <h3 class="font-medium text-gray-950 dark:text-white">Cliente anonimo</h3>
+              <span class="block text-sm tracking-wide text-gray-600 dark:text-gray-400">
+                Definizione per shooting fotografico
+              </span>
+              <blockquote class="mt-3">
+                <p class="text-gray-600 dark:text-gray-400">
+                  Obiettivo secco e con una data precisa. Abbiamo incastrato tutto su lavoro,
+                  famiglia e recupero. Il giorno degli scatti ero nella miglior forma di sempre.
+                </p>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
