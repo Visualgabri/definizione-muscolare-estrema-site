@@ -1,28 +1,14 @@
 ---
-import Stats from "../components/Stats.astro";
 import HeroSection from "../components/HeroSection.astro";
 import Layout from "../layouts/Layout.astro";
-import Testimonials from "../components/Testimonials.astro";
 import CallToAction from "../components/CallToAction.astro";
-import BentoGrid from "@components/BentoGrid.astro";
-import SpeedSection from "@components/SpeedSection.astro";
-import AboutSection from "@components/AboutSection.astro";
-import Services from "../components/Services.astro";
 import QuizSection from "../components/QuizSection.astro";
-import ToolsSection from "../components/ToolsSection.astro";
 ---
 
 <Layout title="Welcome to Astrolus.">
 	<main class="space-y-12 sm:space-y-16 lg:space-y-20 pb-20 overflow-clip">
 		<HeroSection />
-		<AboutSection />
-		<BentoGrid />
-		<SpeedSection />
-		<Stats />
-		<Testimonials />
-		<Services />
 		<QuizSection />
-		<ToolsSection />
 		<CallToAction />
 	</main>
 </Layout>
