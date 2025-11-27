@@ -71,7 +71,7 @@ const links = [
 
         <div
           id="navlinks"
-          class="hidden flex-wrap lg:flex gap-6 items-center w-full lg:w-fit"
+          class="hidden flex-wrap lg:flex gap-6 items-center w-full lg:w-fit relative z-50"
         >
           <div class="lg:fixed lg:inset-x-0 lg:size-fit lg:m-auto">
             <Frame>
@@ -120,6 +120,7 @@ const links = [
 
   function toggleMenu() {
     if (!navLayer || !navLinks || !hamburger) return;
+    console.log("Toggling menu");
 
     navLayer.classList.toggle("scale-y-0");
     navLayer.classList.toggle("scale-y-100");
