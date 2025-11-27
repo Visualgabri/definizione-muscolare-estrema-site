@@ -3,7 +3,6 @@ import BrandLogo from "./BrandLogo.astro";
 import Container from "./Container.astro";
 import { button } from "@tailus/themer-button";
 import { cn } from "@lib/utils";
-import Frame from "./Frame.astro";
 
 const links = [
   { to: "/", label: "Home" },
@@ -21,7 +20,7 @@ const links = [
         class="relative flex flex-wrap items-center justify-between gap-6 py-3 md:gap-0 md:py-4 lg:py-8"
       >
         <div
-          class="relative z-50 flex w-full items-center justify-between md:px-0 lg:w-max"
+          class="relative z-[100] flex w-full items-center justify-between md:px-0 lg:w-max"
         >
           <BrandLogo />
 
@@ -34,73 +33,68 @@ const links = [
               <div
                 aria-hidden="true"
                 id="line"
-                class="m-auto h-0.5 w-5 rounded bg-sky-900 transition duration-300 dark:bg-gray-300 origin-top"
+                class="m-auto h-0.5 w-5 rounded bg-sky-900 transition duration-300 dark:bg-gray-300"
               >
               </div>
               <div
                 aria-hidden="true"
                 id="line2"
-                class="m-auto mt-2 h-0.5 w-5 rounded bg-sky-900 transition duration-300 dark:bg-gray-300 origin-bottom"
+                class="m-auto mt-2 h-0.5 w-5 rounded bg-sky-900 transition duration-300 dark:bg-gray-300"
               >
               </div>
             </button>
           </div>
         </div>
 
-        <!-- Mobile Menu Overlay -->
+        <!-- Mobile Menu Overlay (Full Screen) -->
         <div
           id="navLayer"
-          aria-hidden="true"
-          class="fixed inset-0 z-40 bg-white/30 backdrop-blur-md transition-opacity duration-300 opacity-0 pointer-events-none lg:hidden"
+          class="fixed inset-0 z-[90] bg-white dark:bg-gray-950 flex flex-col items-center justify-center gap-8 opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden"
         >
+          <ul
+            class="flex flex-col gap-6 text-center text-2xl font-medium tracking-wide text-gray-700 dark:text-gray-200"
+          >
+            {
+              links.map((link) => (
+                <li>
+                  <a
+                    href={link.to}
+                    class="block py-2 hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+          <div class="mt-4">
+            <a href="/#contatti" class={cn(button.neutral.lg, "w-full")}>
+              Richiedi consulenza
+            </a>
+          </div>
         </div>
 
-        <!-- Mobile Menu Drawer -->
-        <div
-          id="navlinks"
-          class="fixed inset-y-0 right-0 z-50 w-full max-w-xs bg-white/90 dark:bg-gray-950/90 backdrop-blur-2xl shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out lg:static lg:translate-x-0 lg:bg-transparent lg:shadow-none lg:backdrop-blur-none lg:w-fit lg:max-w-none lg:flex lg:items-center lg:gap-6"
-        >
-          <!-- Mobile Header Spacer -->
-          <div class="h-20 lg:hidden"></div>
-
-          <div
-            class="flex flex-col h-full lg:flex-row lg:items-center lg:h-auto gap-6 p-6 lg:p-0 w-full"
+        <!-- Desktop Menu -->
+        <div class="hidden lg:flex items-center gap-8">
+          <ul
+            class="flex gap-8 text-sm font-medium tracking-wide text-gray-700 dark:text-gray-200"
           >
-            <!-- Desktop Pill / Mobile List -->
-            <div class="lg:fixed lg:inset-x-0 lg:size-fit lg:m-auto z-50">
-              <Frame>
-                <div class="relative w-full text-gray-600 dark:text-gray-300">
-                  <ul
-                    class="flex flex-col gap-2 lg:flex-row lg:gap-0 lg:text-sm font-medium tracking-wide"
+            {
+              links.map((link) => (
+                <li>
+                  <a
+                    href={link.to}
+                    class="hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
                   >
-                    {
-                      links.map((link) => (
-                        <li>
-                          <a
-                            href={link.to}
-                            class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors lg:px-4 lg:py-1 lg:hover:bg-gray-950/5 lg:rounded-[--btn-border-radius] lg:dark:hover:bg-white/5"
-                          >
-                            <span>{link.label}</span>
-                          </a>
-                        </li>
-                      ))
-                    }
-                  </ul>
-                </div>
-              </Frame>
-            </div>
-
-            <div
-              class="mt-auto lg:mt-0 lg:ml-auto border-t pt-6 dark:border-gray-800 lg:border-none lg:pt-0"
-            >
-              <a
-                href="/#contatti"
-                class={cn(button.neutral.sm, "w-full justify-center lg:w-fit")}
-              >
-                Richiedi consulenza
-              </a>
-            </div>
-          </div>
+                    {link.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+          <a href="/#contatti" class={cn(button.neutral.sm)}>
+            Richiedi consulenza
+          </a>
         </div>
       </div>
     </Container>
@@ -110,43 +104,36 @@ const links = [
 <script>
   const hamburger = document.getElementById("hamburger");
   const navLayer = document.getElementById("navLayer");
-  const navLinks = document.getElementById("navlinks");
-  const links = document.querySelectorAll("#navlinks a");
+  const links = document.querySelectorAll("#navLayer a");
 
   function toggleMenu() {
-    if (!navLayer || !navLinks || !hamburger) return;
+    if (!navLayer || !hamburger) return;
 
-    const isClosed = navLinks.classList.contains("translate-x-full");
+    const isOpen = !navLayer.classList.contains("opacity-0");
 
-    if (isClosed) {
-      // Open
-      navLinks.classList.remove("translate-x-full");
-      navLayer.classList.remove("opacity-0", "pointer-events-none");
-      document.body.classList.add("overflow-hidden"); // Prevent scrolling
-
-      // Hamburger animation
-      const lines = hamburger.querySelectorAll("div");
-      lines[0].classList.add("rotate-45", "translate-y-1.5");
-      lines[1].classList.add("-rotate-45", "-translate-y-1");
-    } else {
+    if (isOpen) {
       // Close
-      navLinks.classList.add("translate-x-full");
       navLayer.classList.add("opacity-0", "pointer-events-none");
       document.body.classList.remove("overflow-hidden");
 
-      // Hamburger animation reset
+      // Hamburger reset
       const lines = hamburger.querySelectorAll("div");
       lines[0].classList.remove("rotate-45", "translate-y-1.5");
       lines[1].classList.remove("-rotate-45", "-translate-y-1");
+    } else {
+      // Open
+      navLayer.classList.remove("opacity-0", "pointer-events-none");
+      document.body.classList.add("overflow-hidden");
+
+      // Hamburger animate
+      const lines = hamburger.querySelectorAll("div");
+      lines[0].classList.add("rotate-45", "translate-y-1.5");
+      lines[1].classList.add("-rotate-45", "-translate-y-1");
     }
   }
 
   if (hamburger) {
     hamburger.addEventListener("click", toggleMenu);
-  }
-
-  if (navLayer) {
-    navLayer.addEventListener("click", toggleMenu);
   }
 
   links.forEach((link) => {
