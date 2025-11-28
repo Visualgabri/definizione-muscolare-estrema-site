@@ -1,0 +1,184 @@
+---
+import Container from "./Container.astro";
+import { softVariant as card } from "@tailus/themer-card";
+import { cn } from "@lib/utils";
+---
+
+<section
+    class="text-gray-600 dark:text-gray-300 scroll-mt-24"
+    id="trasformazioni"
+>
+    <Container>
+        <div class="text-center mb-12">
+            <h2
+                class="text-3xl text-gray-950 dark:text-white font-semibold md:text-4xl"
+            >
+                Prima e Dopo
+            </h2>
+            <p class="mt-4 text-gray-600 dark:text-gray-400">
+                Le immagini parlano più di mille parole. Ecco alcune delle
+                incredibili trasformazioni dei nostri atleti.
+            </p>
+        </div>
+
+        <div class="space-y-12">
+            <!-- Transformation 1 -->
+            <div class={cn(card, "p-6")}>
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-4">
+                        <h3
+                            class="text-2xl font-bold text-gray-950 dark:text-white"
+                        >
+                            Da sovrappeso a definito
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-400">
+                            "Pensavo fosse impossibile cambiare a 35 anni. Mi
+                            sbagliavo. Con il giusto piano alimentare e
+                            allenamenti mirati, ho perso 15kg e guadagnato una
+                            definizione che non avevo mai avuto."
+                        </p>
+                        <div
+                            class="flex items-center gap-4 text-sm font-medium text-primary-600 dark:text-primary-400"
+                        >
+                            <span>Tempo: 6 Mesi</span>
+                            <span>•</span>
+                            <span>Obiettivo: Ricomposizione</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-2">
+                            <span
+                                class="block text-center text-sm font-semibold text-gray-500 uppercase tracking-wider"
+                                >Prima</span
+                            >
+                            <img
+                                src="/images/transformations/client1_before.png"
+                                alt="Prima della trasformazione"
+                                class="w-full rounded-xl shadow-lg aspect-[3/4] object-cover"
+                                loading="lazy"
+                            />
+                        </div>
+                        <div class="space-y-2">
+                            <span
+                                class="block text-center text-sm font-semibold text-primary-600 uppercase tracking-wider"
+                                >Dopo</span
+                            >
+                            <img
+                                src="/images/transformations/client1_after.png"
+                                alt="Dopo la trasformazione"
+                                class="w-full rounded-xl shadow-lg aspect-[3/4] object-cover"
+                                loading="lazy"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transformation 2 -->
+            <div class={cn(card, "p-6")}>
+                <div
+                    class="grid md:grid-cols-2 gap-8 items-center md:flex-row-reverse"
+                >
+                    <div class="grid grid-cols-2 gap-4 md:order-1">
+                        <div class="space-y-2">
+                            <span
+                                class="block text-center text-sm font-semibold text-gray-500 uppercase tracking-wider"
+                                >Prima</span
+                            >
+                            <img
+                                src="/images/transformations/client2_before.png"
+                                alt="Prima della trasformazione"
+                                class="w-full rounded-xl shadow-lg aspect-[3/4] object-cover"
+                                loading="lazy"
+                            />
+                        </div>
+                        <div class="space-y-2">
+                            <span
+                                class="block text-center text-sm font-semibold text-primary-600 uppercase tracking-wider"
+                                >Dopo</span
+                            >
+                            <img
+                                src="/images/transformations/client2_after.png"
+                                alt="Dopo la trasformazione"
+                                class="w-full rounded-xl shadow-lg aspect-[3/4] object-cover"
+                                loading="lazy"
+                            />
+                        </div>
+                    </div>
+                    <div class="space-y-4 md:order-2">
+                        <h3
+                            class="text-2xl font-bold text-gray-950 dark:text-white"
+                        >
+                            Tonificazione e Forza
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-400">
+                            "Volevo sentirmi più forte e vedermi meglio allo
+                            specchio. Il percorso è stato impegnativo ma
+                            incredibilmente soddisfacente. Ora ho più energia e
+                            il fisico che ho sempre desiderato."
+                        </p>
+                        <div
+                            class="flex items-center gap-4 text-sm font-medium text-primary-600 dark:text-primary-400"
+                        >
+                            <span>Tempo: 4 Mesi</span>
+                            <span>•</span>
+                            <span>Obiettivo: Tonificazione</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transformation 3 -->
+            <div class={cn(card, "p-6")}>
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-4">
+                        <h3
+                            class="text-2xl font-bold text-gray-950 dark:text-white"
+                        >
+                            Costruzione Muscolare
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-400">
+                            "Ero il classico 'secco' che non riusciva a mettere
+                            massa. Grazie alla programmazione dell'ipertrofia e
+                            ai consigli nutrizionali, ho finalmente riempito le
+                            maniche delle magliette!"
+                        </p>
+                        <div
+                            class="flex items-center gap-4 text-sm font-medium text-primary-600 dark:text-primary-400"
+                        >
+                            <span>Tempo: 8 Mesi</span>
+                            <span>•</span>
+                            <span>Obiettivo: Ipertrofia</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-2">
+                            <span
+                                class="block text-center text-sm font-semibold text-gray-500 uppercase tracking-wider"
+                                >Prima</span
+                            >
+                            <img
+                                src="/images/transformations/client3_before.png"
+                                alt="Prima della trasformazione"
+                                class="w-full rounded-xl shadow-lg aspect-[3/4] object-cover"
+                                loading="lazy"
+                            />
+                        </div>
+                        <div class="space-y-2">
+                            <span
+                                class="block text-center text-sm font-semibold text-primary-600 uppercase tracking-wider"
+                                >Dopo</span
+                            >
+                            <img
+                                src="/images/transformations/client3_after.png"
+                                alt="Dopo la trasformazione"
+                                class="w-full rounded-xl shadow-lg aspect-[3/4] object-cover"
+                                loading="lazy"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </Container>
+</section>
