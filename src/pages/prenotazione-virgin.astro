@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Container from "../components/Container.astro";
+---
+
+<Layout title="Prenotazione Sessioni">
+    <main class="space-y-12 sm:space-y-16 lg:space-y-20 pb-20 overflow-clip">
+        <Container>
+            <div class="py-12 lg:py-24">
+                <h1
+                    class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center"
+                >
+                    Prenota la tua sessione One to One
+                </h1>
+                <div
+                    class="w-full bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden"
+                >
+                    <!-- Google Calendar Appointment Scheduling begin -->
+                    <iframe
+                        src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0C2_32R5zPnfL7FFpzIHAWfxfu-l34VSksRKVrwIDMlTqvtou-ZmyEoGHPFN44gPviQrFmWC6s?gv=true"
+                        style="border: 0"
+                        width="100%"
+                        height="600"
+                        frameborder="0"></iframe>
+                    <!-- end Google Calendar Appointment Scheduling -->
+                </div>
+            </div>
+        </Container>
+    </main>
+</Layout>
